@@ -1,0 +1,59 @@
+src/jose.c:320:5: warning: fscanf() without field width limits can crash with huge input data. [invalidscanf]
+    fscanf(fp, "%s", current_word);
+    ^
+src/jose.c:138:5: error: Common realloc mistake: 'vocab' nulled but not freed upon failure [memleakOnRealloc]
+    vocab = (struct vocab_word *) realloc(vocab, vocab_max_size * sizeof(struct vocab_word));
+    ^
+src/jose.c:181:3: error: Common realloc mistake: 'vocab' nulled but not freed upon failure [memleakOnRealloc]
+  vocab = (struct vocab_word *) realloc(vocab, (vocab_size + 1) * sizeof(struct vocab_word));
+  ^
+src/jose.c:336:10: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+  for (a = 0; a < vocab_size; a++) {
+         ^
+src/jose.c:300:5: note: a is assigned
+  a = posix_memalign((void **) &syn_tmp, 128, (long long) layer1_size * sizeof(real));
+    ^
+src/jose.c:336:10: note: a is overwritten
+  for (a = 0; a < vocab_size; a++) {
+         ^
+src/jose.c:367:5: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+  a = posix_memalign((void **) &syn1neg, 128, (long long) vocab_size * layer1_size * sizeof(real));
+    ^
+src/jose.c:361:5: note: a is assigned
+  a = posix_memalign((void **) &syn0, 128, (long long) vocab_size * layer1_size * sizeof(real));
+    ^
+src/jose.c:367:5: note: a is overwritten
+  a = posix_memalign((void **) &syn1neg, 128, (long long) vocab_size * layer1_size * sizeof(real));
+    ^
+src/jose.c:368:5: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+  a = posix_memalign((void **) &syn1doc, 128, (long long) corpus_size * layer1_size * sizeof(real));
+    ^
+src/jose.c:367:5: note: a is assigned
+  a = posix_memalign((void **) &syn1neg, 128, (long long) vocab_size * layer1_size * sizeof(real));
+    ^
+src/jose.c:368:5: note: a is overwritten
+  a = posix_memalign((void **) &syn1doc, 128, (long long) corpus_size * layer1_size * sizeof(real));
+    ^
+src/jose.c:412:10: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+  for (a = 0; a < corpus_size; a++) {
+         ^
+src/jose.c:368:5: note: a is assigned
+  a = posix_memalign((void **) &syn1doc, 128, (long long) corpus_size * layer1_size * sizeof(real));
+    ^
+src/jose.c:412:10: note: a is overwritten
+  for (a = 0; a < corpus_size; a++) {
+         ^
+src/jose.c:64:14: style: The scope of the variable 'ch' can be reduced. [variableScope]
+  int a = 0, ch;
+             ^
+src/jose.c:187:16: style: The scope of the variable 'hash' can be reduced. [variableScope]
+  unsigned int hash;
+               ^
+src/jose.c:209:16: style: The scope of the variable 'i' can be reduced. [variableScope]
+  long long a, i;
+               ^
+src/jose.c:619:9: style: The scope of the variable 'fo' can be reduced. [variableScope]
+  FILE *fo;
+        ^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingIncludeSystem]
+
